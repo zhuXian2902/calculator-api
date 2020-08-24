@@ -13,4 +13,4 @@
       - npm -g install mochawesome
       - git clone https://github.com/unsortedArray/calculator-api-test-cases
       - cd calculator-api-test-cases
-      - mocha TestCases.js --reporter mochawesome --timeout 10000 --exit
+      - mocha TestCases.js --reporter mochawesome --exit
