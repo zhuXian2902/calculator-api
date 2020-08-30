@@ -13,7 +13,7 @@ exports.add = (req, res) => {
 exports.sub = (req, res) => {
 	const { num1, num2 } = req.body;
 	const sum = num1 - num2;
-	res.json({
+	res.status(200).json({
 		status: 'success',
 		message: 'the difference of given two numbers',
 		sum,
