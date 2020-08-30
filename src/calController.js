@@ -35,6 +35,12 @@ exports.sub = (req, res) => {
 exports.mul = (req, res) => {
 	const { num1, num2 } = req.body;
 	const sum = num1 * num2;
+	if (sum > 1000000) {
+		return res.json({
+			status: 'error',
+			message: 'Overflow',
+		});
+	}
 	res.status(200).json({
 		status: 'success',
 		message: 'The product of given numbers',
