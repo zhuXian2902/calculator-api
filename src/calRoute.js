@@ -6,7 +6,8 @@ const { add, sub, mul, div } = require('./calController');
 const { type, range1, range2 } = require('./authController');
 
 router.get('/', (req, res) => {
-	return res.send('Hello world!');
+	const obj = { message: 'Hello world!' };
+	return res.send(JSON.parse(obj));
 });
 router.post('/add', type, range1, add);
 router.post('/sub', type, range2, sub);

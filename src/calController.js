@@ -3,6 +3,12 @@
 exports.add = (req, res) => {
 	const { num1, num2 } = req.body;
 	let sum = num1 + num2;
+	if (sum > 1000000) {
+		return res.json({
+			status: 'error',
+			message: 'Overflow',
+		});
+	}
 	res.status(200).json({
 		status: 'success',
 		message: 'the sum of given two numbers',
