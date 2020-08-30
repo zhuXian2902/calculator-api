@@ -38,10 +38,10 @@ exports.div = (req, res) => {
 			message: 'Cannot divide by zero',
 		});
 	}
-	const sum = num1 / num2;
+	const result = num1 / num2;
 	res.json({
 		status: `success`,
 		message: `The division of given numbers`,
-		sum,
+		result,
 	});
 };
