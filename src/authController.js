@@ -3,7 +3,7 @@
 exports.range2 = (req, res, next) => {
 	const { num1, num2 } = req.body;
 	if (num1 <= 1000000 || num2 <= 1000000) {
-		return res.status(400).json({
+		return res.json({
 			status: 'error',
 			message: 'Underflow',
 		});
@@ -14,7 +14,7 @@ exports.range2 = (req, res, next) => {
 exports.range1 = (req, res, next) => {
 	const { num1, num2 } = req.body;
 	if (num1 >= 1000000 && num2 >= 1000000) {
-		return res.status(400).json({
+		return res.json({
 			status: 'error',
 			message: 'Overflow',
 		});
