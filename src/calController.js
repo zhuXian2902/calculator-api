@@ -27,7 +27,7 @@ exports.sub = (req, res) => {
 	}
 	res.status(200).json({
 		status: 'success',
-		message: 'the difference of given two numbers',
+		message: 'the sum of given two numbers',
 		sum,
 	});
 };
