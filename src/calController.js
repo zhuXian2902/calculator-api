@@ -21,12 +21,12 @@ exports.sub = (req, res) => {
 	// console.log(num1, num2);
 	const sum = num1 - num2;
 	// console.log(sum);
-	if (sum < 1000000 && sum > 0) {
-		return res.json({
-			status: 'error',
-			message: 'Underflow',
-		});
-	}
+	// if (sum < 1000000 && sum > 0) {
+	// 	return res.json({
+	// 		status: 'error',
+	// 		message: 'Underflow',
+	// 	});
+	// }
 	// console.log(sum);
 	res.status(200).json({
 		status: 'success',

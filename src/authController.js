@@ -6,7 +6,7 @@ exports.range2 = (req, res, next) => {
 		return next();
 	}
 	if ((num1 < 1000000 && num1 > 0) || (num2 < 1000000 && num2 > 0)) {
-		// console.log(num1, num2);
+		console.log(num1, num2);
 		return res.json({
 			status: 'error',
 			message: 'Underflow',
