@@ -19,15 +19,15 @@ exports.add = (req, res) => {
 exports.sub = (req, res) => {
 	const { num1, num2 } = req.body;
 	const sum = num1 - num2;
-	if (sum < 1000000) {
-		return res.json({
-			status: 'error',
-			message: 'Underflow',
-		});
-	}
+	// if (sum < 1000000) {
+	// 	return res.json({
+	// 		status: 'error',
+	// 		message: 'Underflow',
+	// 	});
+	// }
 	res.status(200).json({
 		status: 'success',
-		message: 'the sum of given two numbers',
+		message: 'the difference of given two numbers',
 		sum,
 	});
 };
