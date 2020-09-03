@@ -2,9 +2,9 @@
 
 exports.range2 = (req, res, next) => {
 	const { num1, num2 } = req.body;
-	if (num1 < 1000000 && num2 < 1000000) {
-		return next();
-	}
+	// if (num1 < 1000000 && num2 < 1000000) {
+	// 	return next();
+	// }
 	if (num1 < 1000000 || num2 < 1000000) {
 		return res.json({
 			status: 'error',
