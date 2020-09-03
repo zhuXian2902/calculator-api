@@ -5,12 +5,14 @@ exports.range2 = (req, res, next) => {
 	if (num1 < 0 && num2 < 0) {
 		return next();
 	}
-	if ((num1 < 1000000 && num1 > 0) || (num2 < 1000000 && num2 > 0)) {
-		console.log(num1, num2);
-		return res.json({
-			status: 'error',
-			message: 'Underflow',
-		});
+	if (Number.isInteger(num1) && Number.isInteger(num2)) {
+		if ((num1 < 1000000 && num1 > 0) || (num2 < 1000000 && num2 > 0)) {
+			console.log(num1, num2);
+			return res.json({
+				status: 'error',
+				message: 'Underflow',
+			});
+		}
 	}
 	next();
 };
