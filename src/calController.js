@@ -19,7 +19,11 @@ exports.add = (req, res) => {
 exports.sub = (req, res) => {
 	const { num1, num2 } = req.body;
 	// console.log(num1, num2);
-	let sum = num2 - num1;
+	let sum;
+	if (Number.isInteger(num1) && Number.isInteger(num2)) {
+		sum = num2 - num1;
+	} else sum = num1 - num2;
+
 	// console.log(sum);
 	// if (sum < 1000000 && sum > 0) {
 	// 	return res.json({
