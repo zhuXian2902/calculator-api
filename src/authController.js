@@ -3,9 +3,11 @@
 exports.range2 = (req, res, next) => {
 	const { num1, num2 } = req.body;
 	if (num1 < 1000000 && num2 < 1000000) {
+		// console.log(num1, num2);
 		return next();
 	}
-	if (num1 < 1000000 || num2 < 1000000) {
+	if ((num1 < 1000000 && num1 > 0) || (num2 < 1000000 && num2 > 0)) {
+		// console.log(num1, num2);
 		return res.json({
 			status: 'error',
 			message: 'Underflow',
@@ -27,6 +29,7 @@ exports.range1 = (req, res, next) => {
 
 exports.type = (req, res, next) => {
 	const { num1, num2 } = req.body;
+	// console.log(num1, num2);
 	if (typeof num1 === 'string' || typeof num2 === 'string') {
 		return res.json({
 			status: 'error',
