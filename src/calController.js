@@ -19,7 +19,7 @@ exports.add = (req, res) => {
 exports.sub = (req, res) => {
 	const { num1, num2 } = req.body;
 	// console.log(num1, num2);
-	let sum = num1 - num2;
+	let sum = num2 - num1;
 	// console.log(sum);
 	// if (sum < 1000000 && sum > 0) {
 	// 	return res.json({
@@ -27,7 +27,6 @@ exports.sub = (req, res) => {
 	// 		message: 'Underflow',
 	// 	});
 	// }
-	if (sum < 0) sum = `+${sum}`;
 
 	// console.log(sum);
 	res.status(200).json({
