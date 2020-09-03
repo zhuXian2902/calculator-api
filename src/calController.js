@@ -34,6 +34,12 @@ exports.sub = (req, res) => {
 
 exports.mul = (req, res) => {
 	const { num1, num2 } = req.body;
+	if (typeof num1 === 'string' || typeof num2 === 'string') {
+		return res.json({
+			status: 'error',
+			message: 'Invalid data types',
+		});
+	}
 	const result = num1 * num2;
 	if (result > 1000000) {
 		return res.json({

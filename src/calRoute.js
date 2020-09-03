@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 router.post('/add', type, range1, add);
 router.post('/sub', type, range2, sub);
-router.post('/multiply', type, range1, mul);
+router.post('/multiply', range1, mul);
 router.post('/divide', div);
 
 module.exports = router;
