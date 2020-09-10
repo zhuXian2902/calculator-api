@@ -21,13 +21,6 @@ exports.sub = (req, res) => {
 	// console.log(num1, num2);
 	let difference = num1 - num2;
 
-	if (difference < -1000000) {
-		return res.json({
-			status: `error`,
-			message: `Underflow`,
-		});
-	}
-
 	// console.log(sum);
 	res.json({
 		status: 'success',
