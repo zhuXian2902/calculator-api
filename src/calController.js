@@ -19,35 +19,26 @@ exports.add = (req, res) => {
 exports.sub = (req, res) => {
 	const { num1, num2 } = req.body;
 	// console.log(num1, num2);
-	let sum;
-	if (Number.isInteger(num1) && Number.isInteger(num2)) {
-		sum = num2 - num1;
-	} else sum = num1 - num2;
+	let difference = num1 - num2;
 
-	// console.log(sum);
-	// if (sum < 1000000 && sum > 0) {
-	// 	return res.json({
-	// 		status: 'error',
-	// 		message: 'Underflow',
-	// 	});
-	// }
+	if (result < -1000000) {
+		return res.json({
+			status: `error`,
+			message: `Underflow`,
+		});
+	}
 
 	// console.log(sum);
 	res.status(200).json({
 		status: 'success',
 		message: 'the difference of given two numbers',
-		sum,
+		difference,
 	});
 };
 
 exports.mul = (req, res) => {
 	const { num1, num2 } = req.body;
-	if (typeof num1 === 'string' || typeof num2 === 'string') {
-		return res.json({
-			status: 'error',
-			message: 'Invalid data types',
-		});
-	}
+
 	const result = num1 * num2;
 	if (result > 1000000) {
 		return res.json({
