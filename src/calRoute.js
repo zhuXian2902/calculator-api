@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 	res.send('Hello world!');
 });
 router.post('/add', type, range1, add);
-router.post('/sub', type, range2, sub);
+router.post('/sub', type, sub);
 router.post('/multiply', type, range1, mul);
 router.post('/divide', div);
 
